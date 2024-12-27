@@ -220,7 +220,7 @@ def main_shooter(shooter_x, shooter_y, shooter_color):
 def starting_shooter():     # shooter appearing in screen
     global shooter_x, starting_shooter_y, shooter_color
     color = shooter_color
-    if starting_shooter_y < 600:
+     if starting_shooter_y < 200:                        # random value that represents the below half
         main_shooter(shooter_x, starting_shooter_y, shooter_color)
                
             
