@@ -792,7 +792,7 @@ def animate():
                         bullet_1[i][1] = shooter_y
                 else:
                     bullet_1[i][1] = (bullet_1[i][1] + bullet_speed)
-                if bullet_1[i][1] > shooter_y + 50 and bullet_1[i][1] < shooter_y + 70:
+                if bullet_1[i][1] > shooter_y + 50 and bullet_1[i][1] < shooter_y + 70:         # condition for bullet intervals
                     if i < len(bullet_1) - 1:
                         bullet_1[i+1][2] = True
                 if bullet_1[i][1] > 650:
@@ -803,11 +803,11 @@ def animate():
             ###### While shooter bullet clashing with alien #############
             if bullet_1[i][3] == True:                  # if visible
                 d1 = math.sqrt((bullet_1[i][0] - alien_1[0]) ** 2 + (bullet_1[i][1] - alien_1[1]) ** 2)     # distance between two points
-                if d1 < 25:
+                if d1 < 25:                        # alien radius 20 + bullet radius 5
                     if alien_1[4] == True:
                         bullet_1[i][3] = False
                         alien_1[5] = [1,0,0]        # red
-                        alien_1[3] -= 1
+                        alien_1[3] -= 1            # hp decreases
                         score += 1
                 d2 = math.sqrt((bullet_1[i][0] - alien_2[0]) ** 2 + (bullet_1[i][1] - alien_2[1]) ** 2)     # distance between two points
                 if d2 < 25:
@@ -854,7 +854,7 @@ def animate():
                         bullet_2[i][0] = shooter_x - 10
                         bullet_2[i][3] = True
                         
-            ###### While clashing with alien #############
+            ###### Clashing with alien #############
             if bullet_2[i][3] == True and line_num > 2:
                 d1 = math.sqrt((bullet_2[i][0] - alien_1[0]) ** 2 + (bullet_2[i][1] - alien_1[1]) ** 2)
                 if d1 < 25:
@@ -872,7 +872,7 @@ def animate():
                         score += 1
         ############# bullet_3 looping ##################################################################
         for i in range(len(bullet_3)):
-            if bullet_3[i][2] == True:
+            if bullet_3[i][2] == True:            # if looping
                 if Won == True:
                     if bullet_3[i][1] != shooter_y:
                         bullet_3[i][1] = (bullet_3[i][1] + bullet_speed)
