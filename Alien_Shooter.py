@@ -269,7 +269,7 @@ def bullet5():          # line 5
                 draw_circle(count, i[0], i[1], shooter_color)   # drawing bullet
                 count += 1
                 
-def themes():
+def modes():
     mode_change_r = 0
     while mode_change_r <= 11:
         draw_circle(mode_change_r, 250, 680, [0, 1, 1])
@@ -1159,7 +1159,7 @@ def show_screen(): #Gl DisPlaying Screen Function
         starting_shooter()
     restart_img()
     line()
-    themes()
+    modes()
     heart()
     bulletOfAlien()
     alien1()
